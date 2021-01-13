@@ -1,0 +1,11 @@
+stages:
+  - test_api
+
+  test_app:
+    image: python:latest
+    stage: test_api
+    before_script:
+      - python -V
+      - pip install -r requirments.txt
+      script:
+        - python test_api.py
